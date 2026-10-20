@@ -32,7 +32,7 @@ Getting this to train took five versions; the reasoning for each change is docum
 - **Exploding residuals** (up to ~$10^{14}$ early in training): fixed with a curriculum that ramps up the PDE-loss weight after a boundary-condition warmup, plus residual clamping.
 - **Local minima near the horizon:** fixed with selective inner boundary conditions. Pinning all five components (v4) made $g_{tt}$ and $g_{rr}$ worse, so only the components that failed without one are constrained.
 
-**Current status:** $g_{\theta\theta}$, $g_{t\phi}$, and $g_{\phi\phi}$ are recovered to 1.5–3% mean relative error, and the frame-dragging angular velocity closely tracks the exact solution (`kerr/figures/kerr_frame_dragging.png`). $g_{tt}$ and $g_{rr}$ have not fully converged (about 9–13% mean relative error) and are still being worked on. Earlier versions are kept in `kerr/previous_versions/`.
+**Results:** $g_{\theta\theta}$, $g_{t\phi}$, and $g_{\phi\phi}$ are recovered to 1.5–3% mean relative error, and the frame-dragging angular velocity closely tracks the exact solution (`kerr/figures/kerr_frame_dragging.png`). $g_{tt}$ and $g_{rr}$ did not fully converge (about 9–13% mean relative error); closing that gap, for example with horizon-penetrating coordinates or adaptive loss weighting, is left as future work. Earlier versions are kept in `kerr/previous_versions/`.
 
 ## Running
 
